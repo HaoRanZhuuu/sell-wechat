@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 961120
+    url: jdbc:mysql://localhost:3306/sell?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+server:
+  servlet:
+    context-path: /sell
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  #path: F:/var/log/tomcat/
+#  file: F:/var/log/tomcat/sell.log
+#  level:
+#    com.zhuhaoran.sell.LoggerTest: debug
