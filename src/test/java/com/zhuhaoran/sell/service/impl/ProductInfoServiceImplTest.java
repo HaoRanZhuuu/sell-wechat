@@ -39,7 +39,7 @@ public class ProductInfoServiceImplTest {
 
     @Test
     public void findAll() {
-        PageRequest request = new PageRequest(0,2);
+        PageRequest request = PageRequest.of(0,2);
         Page<ProductInfo> page = productInfoService.findAll(request);
         log.info(page.getTotalElements()+"");
     }
