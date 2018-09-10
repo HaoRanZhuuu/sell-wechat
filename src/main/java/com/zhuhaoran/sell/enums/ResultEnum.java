@@ -28,6 +28,16 @@ public enum  ResultEnum {
 
     ORDER_OWNER_ERROR(19,"订单用户权限异常"),
 
+    PRODUCT_STATUS_ERROR(20,"商品状态异常"),
+
+    CATEGORY_NOT_EXIST(21,"类目不存在"),
+
+    LOGIN_USER_NOT_EXIST(22,"用户名不存在"),
+
+    LOGIN_FILE(23,"用户名或密码错误，请重新登录"),
+
+    LOGOUT_SUCCESS(24,"注销成功"),
+
     ORDER_CANCEL_SUCCESS(101,"订单取消成功"),
 
     ORDER_FINISH_SUCCESS(102,"订单完结成功"),

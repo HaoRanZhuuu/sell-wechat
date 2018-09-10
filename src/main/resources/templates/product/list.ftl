@@ -42,10 +42,10 @@
                         </td>
                         <td>
                             <#if productInfo.getProductStatusEnum().code == 0>
-                                <a class="btn btn-danger btn-sm" href="/sell/seller/product/cancel?productId=${productInfo.productId}" role="button">下架</a>
-                            <#--<#else>-->
-                                    <#--<button type="button" class="btn btn-danger btn-sm" disabled="disabled">取消</button>-->
-                            <#--</#if>-->
+                                <a class="btn btn-danger btn-sm" href="/sell/seller/product/off_sale?productId=${productInfo.productId}" role="button">下架</a>
+                            <#else>
+                                <a class="btn btn-success btn-sm" href="/sell/seller/product/on_sale?productId=${productInfo.productId}" role="button">上架</a>
+                            </#if>
                         </td>
                     </tr>
                     </#list>

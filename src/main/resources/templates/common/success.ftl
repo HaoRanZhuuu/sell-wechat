@@ -7,7 +7,7 @@
             <div class="alert alert-dismissable alert-success">
                 <h4>
                     成功!
-                </h4> <strong>${message}</strong><a href="${url}" class="alert-link">没有自动跳转，请点击</a>
+                </h4> <strong>${message!""}</strong><a href="${url}" class="alert-link">没有自动跳转，请点击</a>
             </div>
         </div>
     </div>

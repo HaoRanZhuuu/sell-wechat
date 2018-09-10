@@ -14,6 +14,7 @@ import com.zhuhaoran.sell.po.OrderMaster;
 import com.zhuhaoran.sell.po.ProductInfo;
 import com.zhuhaoran.sell.service.OrderService;
 import com.zhuhaoran.sell.service.ProductInfoService;
+import com.zhuhaoran.sell.service.WebSocket;
 import com.zhuhaoran.sell.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -44,6 +45,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderMasterRepository orderMasterRepository;
+
+    @Autowired
+    private WebSocket webSocket;
 
     @Override
     @Transactional
@@ -84,6 +88,9 @@ public class OrderServiceImpl implements OrderService {
                 .map(e -> new CartDTO(e.getProductId(),e.getProductQuantity()))
                 .collect(Collectors.toList());
         productInfoService.decreaseStock(cartDTOList);
+
+        //推送订单消息
+        webSocket.sendMessage(orderDTO.getOrderId());
         return orderDTO;
     }
 

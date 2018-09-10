@@ -1,5 +1,6 @@
 package com.zhuhaoran.sell.service.impl;
 
+import com.zhuhaoran.sell.enums.ProductStatusEnum;
 import com.zhuhaoran.sell.po.ProductInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
@@ -56,5 +57,17 @@ public class ProductInfoServiceImplTest {
         productInfo.setCategoryType(3);
         ProductInfo result = productInfoService.save(productInfo);
         Assert.assertNotNull(result);
+    }
+
+    @Test
+    public void onSale() {
+        ProductInfo result = productInfoService.onSale("123456");
+        Assert.assertEquals(ProductStatusEnum.UP,result.getProductStatusEnum());
+    }
+
+    @Test
+    public void offSale() {
+        ProductInfo result = productInfoService.offSale("123456");
+        Assert.assertEquals(ProductStatusEnum.DOWN,result.getProductStatusEnum());
     }
 }
